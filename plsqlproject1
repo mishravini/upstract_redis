@@ -1,0 +1,19 @@
+CREATE TABLE employees (
+    emp_id    NUMBER PRIMARY KEY,
+    emp_name  VARCHAR2(100),
+    salary    NUMBER,
+    dept_id   NUMBER
+);
+    INSERT INTO employees VALUES (101, 'Vini', 60000, 10);
+    INSERT INTO employees VALUES (102, 'Ravi', 55000, 20);
+    INSERT INTO employees VALUES (103, 'Priya', 70000, 10);
+    
+    BEGIN
+    EXECUTE IMMEDIATE 'DROP PROCEDURE get_employee_salary';
+EXCEPTION
+    WHEN OTHERS THEN
+        IF SQLCODE != -4043 THEN
+            RAISE;
+        END IF;
+END;
+/
