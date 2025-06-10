@@ -27,7 +27,7 @@ CREATE TABLE IF NOT EXISTS {TABLE_NAME} (
 """)
 conn.commit()
 
-with open(BACKUP_FILE, 'r') as f:
+with open(BACKUP_FILE, 'R') as f:
     data = json.load(f)
 
 for key, value in data.items():
