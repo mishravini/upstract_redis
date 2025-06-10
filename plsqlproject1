@@ -1,6 +1,6 @@
 CREATE TABLE employees (
     emp_id    NUMBER PRIMARY KEY,
-    emp_name  VARCHAR2(100),
+    emp_name  varchar2(100),
     salary    NUMBER,
     dept_id   number
 );
